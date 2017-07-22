@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AISYWC'16</title>
+  	<script type='text/javascript' src='jquery.min.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- bxslider -->
+<link type="text/css" rel='stylesheet' href="js/bxslider/jquery.bxslider.css">
+<!-- End bxslider -->
+<!-- flexslider -->
+<link type="text/css" rel='stylesheet' href="js/flexslider/flexslider.css">
+<!-- End flexslider -->
+
+<!-- bxslider -->
+<link type="text/css" rel='stylesheet' href="js/radial-progress/style.css">
+<!-- End bxslider -->
+
+<!-- Animate css -->
+<link type="text/css" rel='stylesheet' href="css/animate.css">
+<!-- End Animate css -->
+
+<!-- Bootstrap css -->
+<link type="text/css" rel='stylesheet' href="css/bootstrap.min.css">
+<link type="text/css" rel='stylesheet' href="js/bootstrap-progressbar/bootstrap-progressbar-3.2.0.min.css">
+<!-- End Bootstrap css -->
+
+<!-- Jquery UI css -->
+<link type="text/css" rel='stylesheet' href="js/jqueryui/jquery-ui.css">
+<link type="text/css" rel='stylesheet' href="js/jqueryui/jquery-ui.structure.css">
+<!-- End Jquery UI css -->
+
+<!-- Fancybox -->
+<link type="text/css" rel='stylesheet' href="js/fancybox/jquery.fancybox.css">
+<!-- End Fancybox -->
+
+<link type="text/css" rel='stylesheet' href="fonts/fonts.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+<link type="text/css" data-themecolor="default" rel='stylesheet' href="css/main-default.css">
+
+<link type="text/css" rel='stylesheet' href="js/rs-plugin/css/settings.css">
+<link type="text/css" rel='stylesheet' href="js/rs-plugin/css/settings-custom.css">
+<link type="text/css" rel='stylesheet' href="js/rs-plugin/videojs/video-js.css">
+<style>
+.b-form-vertical__label
+{
+font-weight:700;
+}
+textarea{
+	vertical-align: top;
+	height: 5em;
+}
+.star
+{color:red;
+}
+.error{
+	display: none;
+	margin-left: 10px;
+}		
+
+.error_show{
+	color: red;
+	margin-left: 10px;
+}
+input.invalid, textarea.invalid{
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+	border: 2px solid green;
+}
+</style>
+<script>
+		$(document).ready(function() {
+			<!-- Real-time Validation -->
+				<!--Name can't be blank-->
+				$('#contact_name').on('input', function() {
+					var input=$(this);
+					
+					var re = /^\s*([a-zA-Z,\s]{3,26})+\s*$/;
+					var is_name=re.test(input.val());
+					if(is_name){input.removeClass("invalid").addClass("valid");}
+					else{input.removeClass("valid").addClass("invalid");}
+				});
+				
+				<!--Phone Number Validation-->
+				$('#contact_phone').on('input', function() {
+					var input=$(this);
+					var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+					var is_phone=re.test(input.val());
+					if(is_phone){input.removeClass("invalid").addClass("valid");}
+					else{input.removeClass("valid").addClass("invalid");}
+				});
+				
+				<!--Email must be an email -->
+				$('#contact_email').on('input', function() {
+					var input=$(this);
+					var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+					var is_email=re.test(input.val());
+					if(is_email){input.removeClass("invalid").addClass("valid");}
+					else{input.removeClass("valid").addClass("invalid");}
+				});
+				
+				<!--Message can't be blank -->
+				$('#contact_message').keyup(function(event) {
+					var input=$(this);
+					var message=$(this).val();
+					console.log(message);
+					if(message){input.removeClass("invalid").addClass("valid");}
+					else{input.removeClass("valid").addClass("invalid");}	
+				});
+<!--Message can't be blank -->
+				$('#contact_message1').keyup(function(event) {
+					var input=$(this);
+					var message1=$(this).val();
+					console.log(message1);
+					if(message1){input.removeClass("invalid").addClass("valid");}
+					else{input.removeClass("valid").addClass("invalid");}	
+				});
+<!--Message can't be blank -->
+				$('#contact_message2').keyup(function(event) {
+					var input=$(this);
+					var message2=$(this).val();
+					console.log(message2);
+					if(message2){input.removeClass("invalid").addClass("valid");}
+					else{input.removeClass("valid").addClass("invalid");}	
+				});
+
+			<!-- After Form Submitted Validation-->
+			$("#contact_submit button").click(function(event){
+			
+				var form_data=$("#contact").serializeArray();
+				var error_free=true;
+				
+				
+					
+					var element=$("input[name='name']");
+					var valid=element.hasClass("valid");
+					var error_element=$("span", element.parent());
+					if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+					else{error_element.removeClass("error_show").addClass("error");}
+					
+					var element=$("input[name='email']");
+					var valid=element.hasClass("valid");
+					var error_element=$("span", element.parent());
+					if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+					else{error_element.removeClass("error_show").addClass("error");}
+					
+					var element=$("input[name='phone']");
+					var valid=element.hasClass("valid");
+					var error_element=$("span", element.parent());
+					if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+					else{error_element.removeClass("error_show").addClass("error");}
+					
+					var element=$("input[name='mem']");
+					var valid=element.hasClass("valid");
+					var error_element=$("span", element.parent()); 
+   					if($('#contact_mem').val() == ''){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+					else{error_element.removeClass("error_show").addClass("error");}
+      
+                                        var element=$("input[name='yrs']");
+					var valid=element.hasClass("valid");
+					var error_element=$("span", element.parent()); 
+   					if($('#contact_mem').val() == ''){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+					else{error_element.removeClass("error_show").addClass("error");}
+					
+					
+
+
+				         var element=$("textarea[name='message']");
+					var valid=element.hasClass("valid");
+					var error_element=$("span", element.parent()); 
+   					if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+					else{error_element.removeClass("error_show").addClass("error");}
+
+                                         var element=$("textarea[name='message1']");
+					var valid=element.hasClass("valid");
+					var error_element=$("span", element.parent()); 
+   					if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+					else{error_element.removeClass("error_show").addClass("error");}   
+
+                                        var element=$("textarea[name='message2']");
+					var valid=element.hasClass("valid");
+					var error_element=$("span", element.parent()); 
+   					if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+					else{error_element.removeClass("error_show").addClass("error");}   
+                                          
+                                          var element=$("input[name='category']");
+                                          var valid=element.hasClass("valid");
+					  var error_element=$("span", element.parent());
+                                          if (!$("input[name='category']:checked").val()) {
+                                          error_element.removeClass("error").addClass("error_show"); error_free=false;
+                                         
+                                          } 
+                                          else{error_element.removeClass("error_show").addClass("error");}  
+ 
+                                         var element=$("select[name='describe']");
+                                         var valid=element.hasClass("valid");
+                                         var error_element=$("span", element.parent());
+                                         if ($('#describe').val() == "") 
+                                         {error_element.removeClass("error").addClass("error_show"); error_free=false;}
+else{error_element.removeClass("error_show").addClass("error");}  
+ 
+				
+				if (!error_free){	
+					event.preventDefault(); 
+				}
+				
+			});
+			
+			
+			
+		});
+	</script>
+	 <!--favicon link-->
+  <link rel="SHORTCUT ICON" href="http://www.ieee.org/ucm/groups/webassets/@ieee/@web/@org/documents/images/ieee_favicon.ico"/>
+  <link rel="icon" type="image/vnd.microsoft.icon" href="http://www.ieee.org/ucm/groups/webassets/@ieee/@web/@org/documents/images/ieee_favicon.ico"/>
+  <link rel="apple-touch-icon" href="http://www.ieee.org/ucm/groups/webassets/@ieee/@web/@org/documents/images/ieee_apple_touch_icon.png"/>
+
+</head>
+<body>
+<div id="home" class="home" data-scroll-index="0"></div>
+<header>
+    <div class="container b-header__box b-relative">
+        <a href="index.html" class="b-left b-logo"><img  class="color-theme" data-retina src="img/logo.png" alt="Logo AISYWC" /></a>
+        <div class="b-header-r b-right b-header-r--icon">
+            <div class="b-header-ico-group f-header-ico-group b-right">
+               
+                <span class="b-header-ico b-header-ico-cart-parent"> 
+				<a href="https://www.facebook.com/aisywc/" target="_blank">
+                    <i class="fa fa-facebook"></i></a>
+				
+               </span>
+            </div>
+            <div class="b-top-nav-show-slide f-top-nav-show-slide b-right j-top-nav-show-slide"><i class="fa fa-align-justify"></i></div>
+            <nav class="b-top-nav f-top-nav b-right j-top-nav navbar-example" id="myNavbar">
+                <ul class="b-top-nav__1level_wrap">
+                    <li class="b-top-nav__1level f-top-nav__1level f-primary-b" >
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li class="b-top-nav__1level f-top-nav__1level f-primary-b"><a href="#aisywc"><i class="fa fa-home b-menu-1level-ico"></i>About<i class="fa fa-sort-desc" aria-hidden="true"></i><span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+       <div class="b-top-nav__dropdomn">
+           <ul class="b-top-nav__2level_wrap">
+               <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="index.html#aisywc">AISYWC</a></li>
+               <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="index.html#venue">Venue</a></li>
+<li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="ieee.html#ic">IEEE India Council</a></li>
+                        <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="ieee.html#ieeeds"><i class="fa fa-angle-right"></i>IEEE Delhi Section</a></li>
+              
+           </ul>
+       </div>
+   </li>
+
+                     
+                    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+                        <a href="index.html#schedule">Schedule</a>
+                    </li>
+                    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+                        <a href="index.html#team">Speakers</a>
+                    </li>
+<li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+                        <a href="sponsors.html">Sponsors</a>
+                    </li>
+<li class="b-top-nav__1level f-top-nav__1level f-primary-b" data-scroll-nav="6">
+                        <a href="index.html#faq">FAQ's</a>
+                    </li>
+			 <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+                        <a href="register.php">Register</a>
+                    </li>		  
+                    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+                        <a href="index.html#map">Contact us</a>
+                    </li>
+                     
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="j-menu-container"></div>
+
+<div class="b-inner-page-header f-inner-page-header b-bg-header-inner-page">
+  <div class="b-inner-page-header__content">
+    <div class="container">
+      <h1 class="f-primary-l c-default">Register for AISYWC'16</h1>
+    </div>
+  </div>
+</div>
+<div class="l-main-container">
+    <div class="b-breadcrumbs f-breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                
+                <li><i class="fa fa-angle-right"></i><span> Registration</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container b-container-login-page">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="b-form-row f-primary-l f-title-big c-secondary">Registration Form</div>
+                <div class="b-form-row"></div>
+                <hr class="b-hr" />
+				<form action="register.php" method="POST" id="contact" novalidate>
+                <div class="row b-form-inline b-form-vertical">
+                    <div class="col-xs-12 col-md-12">
+					<div class="b-form-row">
+                            <label class="b-form-vertical__label" for="create_account_name">Name<span class="star">*</span></label>
+                            <div class="b-form-vertical__input">
+                                <input type="text" id="contact_name" name="name" class="form-control" required="required" data-required="true"/>
+								<span class="error">This field is required</span>
+                            </div>
+                        </div>
+                         <div class="b-form-row">
+                            <label class="b-form-vertical__label" for="create_account_phone">Mobile Number<span class="star">*</span></label>
+                            <div class="b-form-vertical__input">
+                                <input type="text" id="contact_phone" name="phone" class="form-control" required />
+								<span class="error">A valid phone number is required</span>		
+                            </div>
+                        </div> 
+                        <div class="b-form-row">
+                            <label class="b-form-vertical__label" for="create_account_email">Email Address<span class="star">*</span></label>
+                            <div class="b-form-vertical__input">
+                                <input type="email" id="contact_email" name="email" class="form-control" required />
+								<span class="error">A valid email address is required</span>	
+                            </div>
+                        </div>
+<div class="b-form-row">
+<label class="b-form-vertical__label" for="create_accournt_phone">Gender<span class="star">*</span></label>
+<div class="b-form-row b-form-inline" >                                      
+<label for="re" class="b-form-vertical__label">
+<input type="radio" value="male"  name="gender" checked>
+<span></span>Male
+</label >
+<label for="r3" class="b-form-vertical__label">
+<input type="radio" value="female" name="gender" >
+<span></span>Female
+</label>	
+</div></div>
+<div class="b-form-row">
+                            <label class="b-form-vertical__label" for="create_account_phonqwe">IEEE Membership Number<span class="star">*</span></label>
+                            <div class="b-form-vertical__input">
+                                <input type="text" id="contact_mem" name="mem" class="form-control" />
+				<span class="error">This is a required field</span>				
+                            </div>
+                        </div> 
+<div class="b-form-row">
+                            <label class="b-form-vertical__label" for="create_account_phosne">IEEE Member since how many years?</label>
+                            <div class="b-form-vertical__input">
+                                <input type="number" name="yrs" class="form-control" value="0" min="0" required />
+				<span class="error">This is a required field</span>						
+                            </div>
+                        </div> 
+
+
+
+                      
+                       
+						  
+						                        <div class="b-form-row">
+                            <label class="b-form-vertical__label" for="create_account_pwwhone">Membership Type<span class="star">*</span></label>
+                               <div class="b-form-row b-form-inline">
+                     
+<label for="r1" class="b-form-vertical__label">
+
+                              <input type="radio" value="ieee"  name="category"  id="ieee" required="required" data-required="true">
+  
+                             <span></span>Student&nbsp;
+                          </label>
+                         <label for="r1" class="b-form-vertical__label">
+
+                              <input type="radio" value="yp" name="category" id="yp" required="required" data-required="true" >
+
+                              <span></span>Young Professional&nbsp;
+                          </label>
+						   <label for="r1" class="b-form-vertical__label">
+
+                              <input type="radio" value="wie" name="category" id="wie" required="required" data-required="true">
+                            
+                             <span></span>Women in Engineering Member&nbsp;
+                    </label><br>
+	    <input type="radio" name="category" style="display:none;"><span class="error">
+Please select one of the above</span>
+		 
+		 
+                        </div> </div>
+        <div class="b-form-row">
+                            <label class="b-form-vertical__label" for="state"></label>
+                            <div class="b-form-vertical__input">
+         <select id="describe" required="required" data-required="true" name="describe" class="form-control" onchange="return onchangeajax(this.value);" required><span class="star">*</span>
+  
+    <option value=""   >Select Membership Type Above</option>
+  </select>
+ <span class="error">This field is required</span>
+ </div>
+                        </div> 
+						 <div class="b-form-row">
+                            <label class="b-form-vertical__label" for="cllg"></label>
+                            <div class="b-form-vertical__input">
+<div id="statediv">
+</div>
+</div></div>
+
+<div class="b-form-row">
+<label class="b-form-vertical__label" for="create_account_phone33">Have you previously attended any AIS(YW)C?</label>
+                                    
+<div class="b-form-vertical__input">
+                                <input type="text" name="attend" class="form-control" placeholder="If yes, mention where"/>
+										
+                            </div></div>
+<div class="b-form-row">
+                            <label class="b-form-vertical__label" for="msg2">Why do you want to attend AISYWC' 16?<span class="star">*</span></label>
+                            <div class="b-form-vertical__input">
+                                <textarea rows="5" id="contact_message" name="message" class="form-control" required/>
+								</textarea>
+		<span class="error">This field is required</span>
+                            </div>
+                        </div>
+<div class="b-form-row">
+                            <label class="b-form-vertical__label" for="message1">Your current and past volunteer roles in IEEE?<span class="star">*</span></label>
+                            <div class="b-form-vertical__input">
+                                <textarea rows="5" id="contact_message1" name="message1" class="form-control" required/>
+								</textarea>
+		<span class="error">This field is required</span>
+                            </div>
+                        </div>
+<div class="b-form-row">
+                            <label class="b-form-vertical__label" for="msg">Your expectations from AISYWC' 16?<span class="star">*</span></label>
+                            <div class="b-form-vertical__input">
+                                <textarea rows="5" id="contact_message2" name="message2" class="form-control" required/>
+								</textarea>
+		<span class="error">This field is required</span>
+                            </div>
+                        </div>
+<div class="b-form-row">
+                            <label class="b-form-vertical__label" for="msg232">Suggestions/ Comments?</label>
+                            <div class="b-form-vertical__input">
+                                <textarea rows="5" id="contact_message3" name="message3" class="form-control" >
+								</textarea>
+		
+                            </div>
+                        </div>
+
+
+ 
+                        
+                       
+                        <div class="b-form-row">
+                            <div class="b-form-vertical__label"></div>
+                            <div class="b-form-vertical__input">
+							<div id="contact_submit">				
+				<button type="submit" name="submit" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100 button-gray-light" >Register</button> 
+			</div>
+                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </form>
+
+	
+        </div>
+    </div>
+</div>
+ <footer>
+  
+  <div class="container">
+    <div class="b-footer-secondary row">
+      <div class="col-md-3 col-sm-12 col-xs-12 f-center b-footer-logo-containter">
+          <br><br><a href="http://www.ieee.org" target="_blank"><img data-retina class="b-footer-logo color-theme" src="img/logo.png" alt="Logo"/></a>
+          <div class="b-footer-logo-text f-footer-logo-text">
+          
+          
+		
+           
+   
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 col-xs-12">
+        <h4 class="f-primary-b f-legacy-h4">Facebook</h4>
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Faisywc%2F%3Ffref%3Dts&tabs=timeline&width=270&height=200&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="270" height="200" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+          </div>
+      <div class="col-md-3 col-sm-12 col-xs-12">
+        <h4 class="f-primary-b f-legacy-h4">contact info</h4>
+        <div class="b-contacts-short-item-group">
+          <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
+            <div class="b-contacts-short-item__icon f-contacts-short-item__icon f-contacts-short-item__icon_lg b-left">
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <div class="b-remaining f-contacts-short-item__text">
+              LNMIIT<br/>
+               Rupa ki Nangal, Post-Sumel, Via-Jamdoli,<br>Sumel, Jaipur,<br>Rajasthan-302031
+
+                
+            </div>
+          </div>
+          
+          <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
+            <div class="b-contacts-short-item__icon f-contacts-short-item__icon b-left f-contacts-short-item__icon_xs">
+              <i class="fa fa-envelope"></i>
+            </div>
+            <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_email">
+              <a href="mailto:info@aisywc.in">info@aisywc.in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-12 col-xs-12 ">
+        <h4 class="f-primary-b f-legacy-h4">photo gallery</h4>
+          <div class="b-short-photo-items-group">
+    <div class="b-column">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_1.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_1.jpg" alt=""/></a>
+    </div>
+    <div class="b-column">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_2.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_2.jpg" alt=""/></a>
+    </div>
+    <div class="b-column">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_3.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_3.jpg" alt=""/></a>
+    </div>
+    <div class="b-column">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_4.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_4.jpg" alt=""/></a>
+    </div>
+    <div class="b-column">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_5.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_5.jpg" alt=""/></a>
+    </div>
+    <div class="b-column">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_6.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_6.jpg" alt=""/></a>
+    </div>
+    <div class="b-column">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_7.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_7.jpg" alt=""/></a>
+    </div>
+    <div class="b-column">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_8.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_8.jpg" alt=""/></a>
+    </div>
+    <div class="b-column hidden-xs">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_9.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_9.jpg" alt=""/></a>
+    </div>
+    <div class="b-column hidden-sm hidden-xs">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_10.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_10.jpg" alt=""/></a>
+    </div>
+    <div class="b-column hidden-sm hidden-xs">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_11.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_11.jpg" alt=""/></a>
+    </div>
+    <div class="b-column hidden-sm hidden-xs">
+        <a class="b-short-photo-item fancybox" href="img/gallery/big/gallery_12.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="img/gallery/sm/gallery_12.jpg" alt=""/></a>
+    </div>
+</div>
+      </div>
+    </div>
+  </div>
+<div class="b-footer-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-xs-12 f-copyright b-copyright"><b>Copyright © 2016 - All Rights Reserved - IEEE Delhi Section</b></div>
+            <div class="col-sm-8 col-xs-12">
+                <div class="b-btn f-btn b-btn-default b-right b-footer__btn_up f-footer__btn_up j-footer__btn_up">
+                    <i class="fa fa-chevron-up"></i>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</footer>
+<script src="js/breakpoints.js"></script>
+<script src="js/jquery/jquery-1.11.1.min.js"></script>
+<!-- bootstrap -->
+<script src="js/scrollspy.js"></script>
+<script src="js/bootstrap-progressbar/bootstrap-progressbar.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- end bootstrap -->
+<script src="js/masonry.pkgd.min.js"></script>
+<script src='js/imagesloaded.pkgd.min.js'></script>
+<!-- bxslider -->
+<script src="js/bxslider/jquery.bxslider.min.js"></script>
+<!-- end bxslider -->
+<!-- flexslider -->
+<script src="js/flexslider/jquery.flexslider.js"></script>
+<!-- end flexslider -->
+<!-- smooth-scroll -->
+<script src="js/smooth-scroll/SmoothScroll.js"></script>
+<!-- end smooth-scroll -->
+<!-- carousel -->
+<script src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<!-- end carousel -->
+<script src="js/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script src="js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="js/rs-plugin/videojs/video.js"></script>
+
+<!-- jquery ui -->
+<script src="js/jqueryui/jquery-ui.js"></script>
+<!-- end jquery ui -->
+<!-- Modules -->
+<script src="js/modules/sliders.js"></script>
+<script src="js/modules/ui.js"></script>
+<script src="js/modules/retina.js"></script>
+<script src="js/modules/animate-numbers.js"></script>
+<script src="js/modules/parallax-effect.js"></script>
+<script src="js/modules/settings.js"></script>
+<script src="js/modules/color-themes.js"></script>
+<!-- End Modules -->
+
+<!-- Audio player -->
+<script type="text/javascript" src="js/audioplayer/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/audioplayer/js/jplayer.playlist.min.js"></script>
+<script src="js/audioplayer.js"></script>
+<!-- end Audio player -->
+
+<!-- radial Progress -->
+<script src="js/radial-progress/jquery.easing.1.3.js"></script>
+<script src="../../cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
+<script src="js/radial-progress/radialProgress.js"></script>
+<script src="js/progressbars.js"></script>
+<!-- end Progress -->
+
+<!-- Google services -->
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
+<script src="js/google-chart.js"></script>
+<!-- end Google services -->
+<script src="js/j.placeholder.js"></script>
+
+<!-- Fancybox -->
+<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+<script src="js/fancybox/jquery.mousewheel.pack.js"></script>
+<script src="js/fancybox/jquery.fancybox.custom.js"></script>
+<!-- End Fancybox -->
+<script src="js/user.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/fontawesome-markers.js"></script>
+<script src="js/markerwithlabel.js"></script>
+<script src="js/cookie.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/scrollIt/scrollIt.min.js"></script>
+<script src="js/modules/navigation-slide.js"></script>
+<div class="settings-wrap">
+    <div class="settings-title">
+        <div class="label settings-label"><i class="fa fa-envelope"></i></div>
+        <h3>Contact us</h3></div>
+    <div class="settings-inner">
+        <div class="settings-box ">
+        <form action="send3.php" method="POST">
+<input type="text" name="name" placeholder="Your Full Name"><br><br>
+<input type="text" name="email" placeholder="Email"><br><br>
+<input type="text" name="phone" placeholder="Contact Number"><br><br>
+<textarea name="msg" placeholder="Message"></textarea>
+	<button class="button-xs button-gray-light" type="submit" value="submit">Send Message</button>
+		</form>
+        </div>
+      
+     
+    </div>
+</div>
+<script type="text/javascript">
+function CheckColors1(val){
+ var element=document.getElementById('state1');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors2(val){
+ var element=document.getElementById('state2');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors3(val){
+ var element=document.getElementById('state3');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors4(val){
+ var element=document.getElementById('state4');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors5(val){
+ var element=document.getElementById('state5');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors6(val){
+ var element=document.getElementById('state6');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors7(val){
+ var element=document.getElementById('state7');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors8(val){
+ var element=document.getElementById('state8');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors9(val){
+ var element=document.getElementById('state9');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors10(val){
+ var element=document.getElementById('state10');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors11(val){
+ var element=document.getElementById('state11');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+<script type="text/javascript">
+function CheckColors12(val){
+ var element=document.getElementById('state12');
+ if(val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
+
+</script> 
+
+<script>
+function onchangeajax(pid)
+ {
+ xmlHttp=GetXmlHttpObject()
+ if (xmlHttp==null)
+ {
+ alert ("Browser does not support HTTP Request")
+ return
+ }
+ 
+ var url="changestate.php"
+ url=url+"?pid="+pid
+ url=url+"&sid="+Math.random()
+ document.getElementById("statediv").innerHTML='Please wait..<img border="0" src="images/ajax-loader.gif">'
+ if(xmlHttp.onreadystatechange=stateChanged)
+ {
+ xmlHttp.open("GET",url,true)
+ xmlHttp.send(null)
+ return true;
+ }
+ else
+ {
+ xmlHttp.open("GET",url,true)
+ xmlHttp.send(null)
+ return false;
+ }
+ }
+ 
+ function stateChanged()
+ {
+ if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+ {
+ document.getElementById("statediv").innerHTML=xmlHttp.responseText
+ return true;
+ }
+ }
+ 
+ function GetXmlHttpObject()
+ {
+ var objXMLHttp=null
+ if (window.XMLHttpRequest)
+ {
+ objXMLHttp=new XMLHttpRequest()
+ }
+ else if (window.ActiveXObject)
+ {
+ objXMLHttp=new ActiveXObject("Microsoft.XMLHTTP")
+ }
+ return objXMLHttp;
+ }
+</script>
+
+<script>
+  var listB = [{name:'Select Section', value:''},
+{name:'Bangalore Section',value:'BangaloreSection-YP'},
+{name:'Bombay Section',value:'BombaySection-YP'},
+{name:'Delhi Section',value:'DelhiSection-YP'},
+{name:'Gujarat Section',value:'GujaratSection-YP'},
+{name:'Hyderabad Section',value:'HyderabadSection-YP'},
+{name:'Kerala Section',value:'KeralaSection-YP'},
+{name:'	Kharagpur Section',value:'KharagpurSection-YP'},
+{name:'	Kolkata Section',value:'KolkataSection-YP'},
+{name:'Madras Section',value:'MadrasSection-YP'},
+{name:'Pune Section',value:'PuneSection-YP'},
+{name:'Uttar Pradesh Section',value:'UttarPradeshSection-YP'}, {name:'Other',value:'Other-YP'}
+]; 
+var listA = [{name:'Select Section', value:''},
+{name:'Bangalore Section',value:'BangaloreSection'},
+{name:'Bombay Section',value:'BombaySection'},
+{name:'Delhi Section',value:'DelhiSection'},
+{name:'Gujarat Section',value:'GujaratSection'},
+{name:'Hyderabad Section',value:'HyderabadSection'},
+{name:'Kerala Section',value:'KeralaSection'},
+{name:'	Kharagpur Section',value:'KharagpurSection'},
+{name:'	Kolkata Section',value:'KolkataSection'},
+{name:'Madras Section',value:'MadrasSection'},
+{name:'Pune Section',value:'PuneSection'},
+{name:'Uttar Pradesh Section',value:'UttarPradeshSection'}, {name:'Other',value:'Other'}
+]; 
+</script>
+
+<script>
+  $(document).ready( function() {
+    $('#ieee').bind('click', function() {
+      $('#describe').empty();                              
+      $.each(listA, function(index, value) {
+        $('#describe').append('<option value="'+value.value+'">'+value.name+'</option>');
+      });
+    });
+
+    $('#yp').bind('click', function(){
+      $('#describe').empty();                              
+      $.each(listB, function(index, value) {
+        $('#describe').append('<option value="'+value.value+'">'+value.name+'</option>');
+      });
+    });
+	
+	$('#wie').bind('click', function(){
+      $('#describe').empty();                              
+      $.each(listA, function(index, value) {
+        $('#describe').append('<option value="'+value.value+'">'+value.name+'</option>');
+      });
+    });
+	
+
+  });
+</script>
+
+</body>
+
+</html>
