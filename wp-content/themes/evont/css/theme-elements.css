@@ -24,7 +24,7 @@
 		color:#000;
 		margin:0;
 		text-transform: uppercase;
-		background: #fff300;
+		background: orange;
 		display: inline-block;
 		margin-bottom: 20px;
 		padding: 3px 23px;
@@ -54,7 +54,7 @@
 	}
 	.jx-evont-title-1 h2:before {
 	  content:"";
-		border:5px solid #ffe102;
+	  border:5px solid #ffe102;
 	  height:35px;
 	  width:35px;
 	  position:absolute;
@@ -381,7 +381,7 @@
 		width: 100%;
 	}
 	.jx-evont-contactmap-section .contactDetails {
-		background: rgba(156, 53, 155, 0.95);
+		background:  #1b96b4;
 		padding: 39px 50px;
 		margin: 47px 0;
 		color: #ffffff;
@@ -449,7 +449,7 @@
 		padding: 25px;
 		margin: 47px 0px;
 		height: 400px;
-		background: rgba(255, 255, 255, 0.95);
+		background:  #1b96b4;
 		box-shadow: 0 0 20px rgba(0,0,0,0.4);
 	}
 
@@ -501,7 +501,7 @@
 	  border-radius:0px;
 	}
 	.jx-evont-map-contact-form button:hover{
-	  background: #333 !important;
+	  background:  #1b96b4 !important;
 	  color: #dc284f;
 	  border: 0px;
 	}
@@ -2296,10 +2296,11 @@
 		margin-bottom: 30px;
 	}
 	.jx-venue-2 .jx-venue-item .image img {
-	  width: 100%;
+	  width: 240px;
+	  height:200px;
 	}
 	.jx-venue-2 .jx-venue-item .details {
-		padding: 18px 14px;
+		padding: 12px 10px;
 	}
 	.jx-venue-2 .jx-venue-item .title {
 		color:#000000;
@@ -2820,8 +2821,8 @@
 		position:relative;
 	}
 	.jx-evont-speakers-area .speaker-img img {
-		width:100%;
-		height:auto;
+		width:262px;
+		height:272px;
 	}
 	.jx-evont-speakers-area h3 {
 		text-align: center;
@@ -2877,29 +2878,6 @@
 		border-radius:50%;
 	 transition: .4s;
 	}
-	.jx-evont-speakers-area ul.socail li.facebook a:hover {
-		color:#fff;
-		background:#475a96cc;
-		transition: .4s;
-	}
-	
-	.jx-evont-speakers-area ul.socail li.twitter a:hover {
-		color:#fff;
-		background: #55aceecc;
-		transition: .4s;
-	}
-	
-	.jx-evont-speakers-area ul.socail li.linkdin a:hover {
-		color:#fff;
-		background:#55aceecc;
-		transition: .4s;
-	}
-	
-	.jx-evont-speakers-area ul.socail li.googleplus a:hover {
-		color:#fff;
-		background:#d01717cc;
-		transition: .4s;
-	}
 	
 	.jx-evont-speaker-item{
 	  transition: .4s;
@@ -2907,8 +2885,8 @@
 	  border:4px solid transparent;
 	}
 	.jx-evont-speaker-item:hover{
-	  background:#9c359b;
-	  border:4px solid #9c359b;
+	  background: #1b96b4;
+	  border:4px solid  #1b96b4;
 	}
 	.jx-evont-speaker-item:hover .speaker-img .overlay {
 		opacity: 1;
@@ -2972,22 +2950,6 @@
 
 
 
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
 	.jx-evont-speakers-area .col-xs-6 {
 	 width:100%
 	}
@@ -3013,8 +2975,8 @@
 	}
 	
 	.jx-evont-speakers-area.style-b .speaker-img img {
-		width: 150px;
-		height: auto;
+		width: 262px;
+		height: 270px;
 	}
 	
 	
@@ -3741,9 +3703,9 @@
 	}
 	.nav-tabs > li > a {
 		margin-right: 0;
-		color: #9c359b;
+		color: black;
 		border-radius:4px !important;
-		border: solid 2px #9c359b !important;
+		border: solid 2px white !important;
 		font-size:16px;
 		padding:5px 15px;
 		font-family: 'Montserrat';
@@ -3756,7 +3718,7 @@
 	}
 	.nav-tabs > li.open > a, .nav-tabs > li:hover > a {
 		border: 0;
-		background: #f9f9f9 !important;
+		background: #1b96b4 !important;
 		color: #333;		
 		border: solid 2px #000
 	}
@@ -3776,12 +3738,12 @@
 	}
 	.nav-tabs > li.active > a {
 		border: 0;
-		background: #9c359b !important;
+		background: #1b96b4 !important;
 		color:#fff
 	}
 	.nav-tabs > li.active > a:focus {
 		border: 0;
-		background: #9c359b !important;
+		background: #1b96b4 !important;
 	
 		color:#fff
 	}
@@ -3808,13 +3770,13 @@
 	}
 	.program-panel.tabs-below > .nav-tabs > li:hover {
 		border-bottom: 0;
-		border-top: 4px solid #fbcdcf;
+		border-top: 4px solid white;
 		color: #fff
 	}
 	.program-panel.tabs-below > .nav-tabs > li.active {
 		margin-bottom: -2px;
 		border-bottom: 0;
-		border-top: 4px solid #f3565d;
+		border-top: 4px solid white;
 		color: #fff
 
 	}
@@ -4033,7 +3995,7 @@
 		font-size: 32px;
 	line-height: 35px;
 	padding-bottom: 5px;
-	border-bottom: 3px solid #ffffff4d;
+	border-bottom: 3px solid #ffff4d;
 	font-family: oswald;
 	font-weight: 600;
 	}
@@ -4120,7 +4082,7 @@
 	
 	.programs-section.style-4 ul li {
 		padding: 0px !important;
-		border: solid 1px #f9f9f9;
+		border: solid 1px white;
 		border-top: 0px;
 		border-left: 0px;
 	}
@@ -4130,7 +4092,7 @@
 		position: absolute;
 		border-style: solid;
 		border-width: 9px 9px 0;
-		border-color: #9c359b transparent;
+		border-color: #1b96b4 transparent;
 		display: block;
 		width: 0;
 		z-index: 5;
@@ -4292,10 +4254,10 @@
 	}
 	
 	.programs-section.style-5 ul li.active > a {
-		background:#fff300 !important;
+		background:orange !important;
 	}
 	.programs-section.style-5 ul li:hover > a {
-		background:#fff300 !important;
+		background:orange !important;
 	}
 	
 	
@@ -6217,7 +6179,7 @@
 	  float:left;
 	  margin-right:10px;
 	  font-size:30px;
-	  color:#9c359b;  
+	  color:#1b96b4;s  
 	}
 	
 	.evont-toggle-trigger.active:before{
