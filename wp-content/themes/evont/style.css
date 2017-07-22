@@ -1724,7 +1724,7 @@ float:left;
 }
 .mainBtn {
 	height:44px;
-	background:#2e2841;
+	background:#1b96b4;
 	border:0;
 	font-size:17px;
 	line-height:30px;
@@ -1740,7 +1740,7 @@ float:left;
 	font-weight:700;
 }
 .mainBtn:hover {
-	background:#fff300;
+	background:orange;
  transition: .4s;
 	color:#000;
  transition: .4s;
@@ -2090,7 +2090,7 @@ background-color: #fff300;
 }
 
 .btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default{
-	background-color: #fff300;
+	background-color: orange;
 }
 
 .jx-evont-header {
@@ -2100,7 +2100,7 @@ background-color: #fff300;
 }
 .jx-evont-top-bar {
 	background:#333333;
-	color:#fff300
+	color:orange;
 }
 
 .jx-evont-header .dropdown-menu{
@@ -2191,13 +2191,13 @@ background-color: #fff300;
 
 .jx-evont-navbar-default .navbar-nav>li>a:focus, .jx-evont-navbar-default .navbar-nav>li>a:hover {
 	color:#000;
-	background-color:#fff300;
+	background-color:orange;
 	border-radius:10px 10px 0 10px
 }
 
 .jx-evont-navbar-default .navbar-nav>.active>a, .jx-evont-navbar-default .navbar-nav>.active>a:focus, .jx-evont-navbar-default .navbar-nav>.active>a:hover {
 	color:#000;
-	background-color:#fff300;
+	background-color:orange;
 	border-radius:10px 10px 0 10px
 }
 
@@ -2208,7 +2208,7 @@ background-color: #fff300;
     position: fixed !important;
     top: 0;
     left: 0;
-    background: #2d283f;
+    background:orange;
 	width: 100%;
 }
 
@@ -2363,7 +2363,7 @@ background-color: #fff300;
 }
 
 .jx-evont-mainmenu > li:hover{
-	border-top: 3px solid #9c359b;
+	border-top: 3px solid #1b96b4;
 }
 
 .jx-evont-mainmenu > li:hover > a{
