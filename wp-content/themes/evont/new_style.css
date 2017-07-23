@@ -29,7 +29,7 @@
 .our-team{
     text-align: center;
     overflow: hidden;
-    padding: 40px 15px 10px;
+    padding: 5px 5px 5px;
     border: 1px solid #ebebeb;
     transition:all 0.3s ease 0s;
 }
@@ -53,7 +53,7 @@
 }
 .border{
     width: 100px;
-    border-bottom: 3px solid #37cfd7;
+    border-bottom: 3px solid orange;
     display: block;
     margin: 0 auto;
     transition: all 0.3s ease 0s;
@@ -100,11 +100,11 @@
     transition: all 0.3s ease 0s;
 }
 .team_social > li > a:hover{
-    color:#fff;
+    color: orange;
 }
 .our-team:hover{
-    background: #1fb5f6;
-    padding-bottom: 30px;
+    background: white;
+    padding: 5px 5px 5px;
 }
 .our-team:hover .pic img{
     border-color: orange;
@@ -113,7 +113,7 @@
     border-color: orange;
 }
 .our-team:hover .border:after{
-    border-color: #fff;
+    border-color: orange;
 }
 .our-team:hover .post{
     margin-top: 0;
