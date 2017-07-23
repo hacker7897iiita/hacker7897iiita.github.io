@@ -3302,7 +3302,7 @@
 		border-bottom: 1px solid #eee;
 	}
 	.jx-evont-plan-section .standard-column {
-		background:#9c359b;
+		background: orange;
 		min-height:455px;
 		color:#fff;
 		padding:35px;
@@ -3357,17 +3357,17 @@
 		border:0;
 		font-size:19px;
 		padding: 10px 25px;
-		color:#32ac49;
+		color: orange;
 		transition: .4s;
 		font-weight: 600;
 	}
 	.jx-evont-plan-section .standard-column .registerBtn:hover {
 		background:#333;
-		color:#fff;
+		color: orange;
 		transition: .4s;
 	}
 	.jx-evont-plan-section .plan-column .registerBtn {
-		background: #32ac49;
+		background: orange;
 		border-radius: 30px;
 		border: 0;
 		font-size: 19px;
@@ -3378,7 +3378,7 @@
 	}
 	.jx-evont-plan-section .plan-column .registerBtn:hover {
 		background:#333;
-		color:#fff;
+		color: orange;
 		transition: .4s;
 	}
 	
