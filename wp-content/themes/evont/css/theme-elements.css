@@ -3303,7 +3303,7 @@
 	}
 	.jx-evont-plan-section .standard-column {
 		background: orange;
-		min-height:455px;
+		min-height: 0px;
 		color:#fff;
 		padding:35px;
 		box-shadow: 0 0 20px rgba(0,0,0,0.2);
@@ -7295,3 +7295,41 @@
 		padding: 1px 15px 4px 15px;
 		border-radius: 15px;
 	}
+
+	/* button */
+#wrap{
+  text-align:center;
+  padding-bottom: 60px;
+  padding-top : 0px;
+}
+.btn-box {
+	background: orange;
+		border-radius:30px;
+		border:0;
+		font-size:19px;
+		padding: 15px 30px;
+		color: black;
+		transition: .4s;
+		font-weight: 600;
+}
+.btn-pos {
+position: relative;
+display: inline-block;
+}
+
+.btn-gradient {
+		background: orange;
+		border-radius:30px;
+		border:0;
+		font-size:19px;
+		padding: 15px 30px;
+		color: black;
+		transition: .4s;
+		font-weight: 600;
+}
+
+.btn-gradient:hover {
+		background:#333;
+		color: orange;
+		transition: .4s;
+}
