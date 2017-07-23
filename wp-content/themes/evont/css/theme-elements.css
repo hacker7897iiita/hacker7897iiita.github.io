@@ -3257,7 +3257,7 @@
 	}
 	.jx-evont-plan-section .plan-column {
 		background: #fff;
-		min-height: 455px;
+		min-height: 0px;
 		color: #333;
 		padding: 35px;
 		box-shadow: 0 0 20px rgba(0,0,0,0.2);

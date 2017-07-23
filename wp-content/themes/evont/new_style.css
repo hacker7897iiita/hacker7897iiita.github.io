@@ -103,7 +103,7 @@
     color: orange;
 }
 .our-team:hover{
-    background: white;
+    background: #E8E8E8;
     padding: 5px 5px 5px;
 }
 .our-team:hover .pic img{
