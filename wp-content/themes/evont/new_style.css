@@ -29,9 +29,10 @@
 .our-team{
     text-align: center;
     overflow: hidden;
-    padding: 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
     border: 1px solid #ebebeb;
     transition:all 0.3s ease 0s;
+    max-width: 318px; max-height: 458px;
 }
 .pic img{
     border: 10px solid #f8f8f8;
@@ -104,7 +105,7 @@
 }
 .our-team:hover{
     background: #E8E8E8;
-    padding: 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
 }
 .our-team:hover .pic img{
     border-color: orange;
