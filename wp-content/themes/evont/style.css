@@ -4901,7 +4901,7 @@ height: 467px;
 }
 
 .jx-evont-hero-title h2{
-  color:#fff300;
+  color: #9c359b;
   font-family: 'Montserrat' !important;
   font-size:50px;
   line-height: 1 !important;
@@ -5566,7 +5566,7 @@ padding-top: 400px;
 .jx_evont_countdown ul li .count-text{
   font-size:30px;
  text-transform: uppercase;
- color: #fff300;
+ color: #9c359b;
 }
 
 
@@ -5631,7 +5631,7 @@ padding-top: 400px;
 }
 
 .jx-evont-breadcrumb span {
-   color: orange;
+   color: #FFA000;
     font-size: 14px;
     font-weight: 500;
 
@@ -7372,7 +7372,7 @@ ul.comments .comment-block .date {
 }
 
 .widget h6 span {
-	color:orange;
+	color: #FFA000;
 }
 
 
