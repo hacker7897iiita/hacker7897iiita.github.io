@@ -24,7 +24,7 @@
 		color:#000;
 		margin:0;
 		text-transform: uppercase;
-		background: orange;
+		background: #FFA000;
 		display: inline-block;
 		margin-bottom: 20px;
 		padding: 3px 23px;
@@ -381,7 +381,7 @@
 		width: 100%;
 	}
 	.jx-evont-contactmap-section .contactDetails {
-		background:  #1b96b4;
+		background:  #9c359b;
 		padding: 39px 50px;
 		margin: 47px 0;
 		color: #ffffff;
@@ -1631,7 +1631,7 @@
 		font-size: 42px;
 	font-family: 'Raleway';
 	font-weight: 800;
-	color: #1b96b4;
+	color: #9c359b;
 	line-height: normal;
 	line-height: 40px;
 	}
@@ -3738,7 +3738,7 @@
 	}
 	.nav-tabs > li.active > a {
 		border: 0;
-		background: #1b96b4 !important;
+		background: #9c359b !important;
 		color:#fff
 	}
 	.nav-tabs > li.active > a:focus {

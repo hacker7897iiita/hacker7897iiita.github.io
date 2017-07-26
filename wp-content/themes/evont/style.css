@@ -1724,7 +1724,7 @@ float:left;
 }
 .mainBtn {
 	height:44px;
-	background:#1b96b4;
+	background:#9c359b;
 	border:0;
 	font-size:17px;
 	line-height:30px;
@@ -4083,7 +4083,7 @@ margin-left: 10px;
 }
 
 .jx-evont-blog-section .jx-evont-blog-date {
-	background: #fff300;
+	background: #FFA000;
 	color: #000;
 	text-align: center;
 	padding: 16px;
@@ -4732,7 +4732,7 @@ margin-left: -15px;
 	font-family: 'Oswald';
 	font-weight: 500;
 	text-transform: uppercase;
-	background: #fff300;
+	background: #9C359B;
 	line-height: 1;
 	padding: 15px 80px 15px 30px;
 	margin-top: 50px;
