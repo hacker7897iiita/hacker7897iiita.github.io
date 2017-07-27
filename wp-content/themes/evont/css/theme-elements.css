@@ -2885,8 +2885,8 @@
 	  border:4px solid transparent;
 	}
 	.jx-evont-speaker-item:hover{
-	  background: #1b96b4;
-	  border:4px solid  #1b96b4;
+	  background: #9c359b;
+	  border:4px solid  #9c359b;
 	}
 	.jx-evont-speaker-item:hover .speaker-img .overlay {
 		opacity: 1;
@@ -3718,7 +3718,6 @@
 	}
 	.nav-tabs > li.open > a, .nav-tabs > li:hover > a {
 		border: 0;
-		background: #1b96b4 !important;
 		color: #333;		
 		border: solid 2px #000
 	}
@@ -6179,7 +6178,7 @@
 	  float:left;
 	  margin-right:10px;
 	  font-size:30px;
-	  color:#1b96b4; 
+	  color:#9c359b; 
 	}
 	
 	.evont-toggle-trigger.active:before{
@@ -6188,7 +6187,7 @@
 	  float:left;
 	  margin-right:10px;
 	  font-size:30px;
-	  color:#1b96b4;  
+	  color:#9c359b;  
 	}
 	
 	
