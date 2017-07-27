@@ -2363,7 +2363,8 @@ background-color: #fff300;
 }
 
 .jx-evont-mainmenu > li:hover{
-	border-top: 3px solid #1b96b4;
+	
+  background-color: black;
 }
 
 .jx-evont-mainmenu > li:hover > a{
