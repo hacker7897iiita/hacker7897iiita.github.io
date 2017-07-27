@@ -2364,7 +2364,7 @@ background-color: #fff300;
 
 .jx-evont-mainmenu > li:hover{
 	
-  background-color: black;
+ border-top: 3px solid #1b96b4;
 }
 
 .jx-evont-mainmenu > li:hover > a{
