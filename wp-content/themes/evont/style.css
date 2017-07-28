@@ -2364,11 +2364,12 @@ background-color: #fff300;
 
 .jx-evont-mainmenu > li:hover{
 	
- border-top: 3px solid #1b96b4;
+ border-top: 3px solid #FFA000;
+ background-color: black;
+ color: white;
 }
-
 .jx-evont-mainmenu > li:hover > a{
-	color: #666666;
+	color: white;
 }
 
 .jx-evont-mainmenu li.with-sub:hover:before {
@@ -2557,8 +2558,8 @@ background-color: #fff300;
 	position:relative;
 	}
 .jx-evont-mainmenu .submenu li:hover > a {
-  	color: #333 !important;
-	background: #fff300;
+  	color: white !important;
+	background: black;
 	border-radius: 0px !important;
 }
 .jx-evont-mainmenu li .submenu a {
@@ -2872,7 +2873,9 @@ z-index: 99999;
 .home .jx-evont-header.jx-header-1.jx-evont-sticky.fixed a {
 	color:#000000;
 }
-
+.home .jx-evont-header.jx-header-1.jx-evont-sticky.fixed a:hover {
+  color: white;
+}
 .home .jx-evont-mainmenu > li > a {
 	color:#ffffff;
 }
