@@ -17,7 +17,7 @@
     
     <!-- CSS
   ================================================== -->
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- registration page -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="shortcut icon" href="wp-content/themes/evont/images/favicon.ico" type="image/x-icon">
@@ -83,7 +83,6 @@
     * , body , .jx-evont-contactmap-section p , .jx-evont-blog-section p , .jx-evont-title-1 p , .programs_item p , .nav-tabs > li > a  { font-family: Open Sans, Arial, Helvetica, sans-serif ;}h1,h2,h3,h4,h5,h6,h7 , .jx-evont-title-1 h1 , .jx-evont-get-updates h2 , .jx-evont-contactmap-section h2 , .jx-evont-contactmap-section h3 , .jx-evont-tagline-section .jx-evont-heading .txt-1 , .jx-evont-tagline-section .jx-evont-heading .txt-2 , .jx-venue-2 .jx-venue-item .title  { font-family: Raleway, Arial, Helvetica, sans-serif !important;}div.subtitle , .jx-evont-blog-section.small h3 , .jx-venue-1 .jx-venue-item .title , .jx-evont-blog-section.style-3 h3 , .programs_item h3 { font-family: Raleway, Arial, Helvetica, sans-serif !important;}nav ul li a , .jx-evont-mainmenu li a { font-family: Roboto, Arial, Helvetica, sans-serif !important;}footer h1,footer h2,footer h3,footer h4,footer h5,footer h6, .jx-evont-footer.jx-footer-1 .jx-evont-copyright { font-family: Open Sans, Arial, Helvetica, sans-serif !important;}.jx-evont-tagline-section .jx-evont-heading .number , .jx-month-small .event-title , .jx-month-small .event-ticket-btn , .jx-big-date , .jx-month-small , .jx-month-small .slider-year , .jx_evont_countdown ul li , .jx-evont-hero-title h2 , .programs_item.style-1 .time { font-family: Oswald, Arial, Helvetica, sans-serif !important;}body{font-size: 15px; font-weight: normal; color: <?php  echo  ?>; }h1{ font-size: 32px; font-weight: normal; color: ; line-height: 30px;font-weight: 300;}h2{ font-size: 23px; font-weight: normal; color: ; }h3{ font-size: 18px; font-weight: normal; color: ; }h4{ font-size: 16px; font-weight: normal; color: ; }h5{ font-size: 15px; font-weight: normal; color: ; }h6{ font-size: 14px; font-weight: normal; color: ; }h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited  { font-weight: inherit; color: inherit; }body{}
     </style>
     <!-- registration page -->
-    <script type='text/javascript' src='jquery.min.js'></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
@@ -117,7 +116,7 @@ input.valid, textarea.valid{
     border: 2px solid green;
 }
 </style>
-<script>
+<script type='text/javascript'>
         $(document).ready(function() {
                 $('#contact_name').on('input', function() {
                     var input=$(this);
@@ -145,7 +144,35 @@ input.valid, textarea.valid{
                     if(is_email){input.removeClass("invalid").addClass("valid");}
                     else{input.removeClass("valid").addClass("invalid");}
                 });
-                
+                $('#cllg_name').keyup(function(event) {
+                    var input=$(this);
+                    var message=$(this).val();
+                    console.log(message);
+                    if(message){input.removeClass("invalid").addClass("valid");}
+                    else{input.removeClass("valid").addClass("invalid");}   
+                });
+                $('#cllg_org').keyup(function(event) {
+                    var input=$(this);
+                    var message=$(this).val();
+                    console.log(message);
+                    if(message){input.removeClass("invalid").addClass("valid");}
+                    else{input.removeClass("valid").addClass("invalid");}   
+                });
+                $('#cllg_city').keyup(function(event) {
+                    var input=$(this);
+                    var message=$(this).val();
+                    console.log(message);
+                    if(message){input.removeClass("invalid").addClass("valid");}
+                    else{input.removeClass("valid").addClass("invalid");}   
+                });
+                $('#attender').keyup(function(event) {
+                    var input=$(this);
+                    var message=$(this).val();
+                    console.log(message);
+                    if(message){input.removeClass("invalid").addClass("valid");}
+                    else{input.removeClass("valid").addClass("invalid");}   
+                });
+
                 $('#contact_message').keyup(function(event) {
                     var input=$(this);
                     var message=$(this).val();
@@ -205,11 +232,32 @@ input.valid, textarea.valid{
                     var error_element=$("span", element.parent()); 
                     if($('#contact_mem').val() == ''){error_element.removeClass("error").addClass("error_show"); error_free=false;}
                     else{error_element.removeClass("error_show").addClass("error");}
-                    
-                    
 
+                    var element=$("input[name='cllgname']");
+                    var valid=element.hasClass("valid");
+                    var error_element=$("span", element.parent());
+                    if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+                    else{error_element.removeClass("error_show").addClass("error");}
+                    
+                     var element=$("input[name='cllgcity']");
+                    var valid=element.hasClass("valid");
+                    var error_element=$("span", element.parent());
+                    if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+                    else{error_element.removeClass("error_show").addClass("error");}
 
-                    var element=$("textarea[name='message1essage']");
+                     var element=$("input[name='cllgorg']");
+                    var valid=element.hasClass("valid");
+                    var error_element=$("span", element.parent());
+                    if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+                    else{error_element.removeClass("error_show").addClass("error");}
+
+                    var element=$("input[name='attend']");
+                    var valid=element.hasClass("valid");
+                    var error_element=$("span", element.parent());
+                    if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+                    else{error_element.removeClass("error_show").addClass("error");}
+
+                    var element=$("textarea[name='message']");
                     var valid=element.hasClass("valid");
                     var error_element=$("span", element.parent()); 
                     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
@@ -676,7 +724,7 @@ Please select one of the above</span>
          
          
                         </div> </div>
-        <div class="b-form-row">
+ <!--       <div class="b-form-row">
                             <label class="b-form-vertical__label" for="state"></label>
                             <div class="b-form-vertical__input">
          <select id="describe" required="required" data-required="true" name="describe" class="form-control" onchange="return onchangeajax(this.value);" required><span class="star">*</span>
@@ -685,21 +733,21 @@ Please select one of the above</span>
   </select>
  <span class="error">This field is required</span>
  </div>
-                        </div> 
+                        </div> -->
                          <div class="b-form-row">
                             <label class="b-form-vertical__label" for="cllg"></label>
                             <div class="b-form-vertical__input">
 <div id="statediv">
 </div>
 </div></div>
-
 <div class="b-form-row">
-<label class="b-form-vertical__label" for="create_account_phone33">Have you previously attended any AIS(YW)C?<span class="star">*</span></label>
-                                    
-<div class="b-form-vertical__input">
-                                <input type="text" id="prev" name="attend" class="form-control"/>
-                                        
-                            </div></div>
+                            <label class="b-form-vertical__label" for="msg2">Have you previously attended any AIS(YW)C?<span class="star">*</span></label>
+                            <div class="b-form-vertical__input">
+                                <input type="text" id="attender" name="attend" class="form-control" required/>
+                                <span class="error">This field is required</span>
+                            </div>
+                        </div>
+
 <div class="b-form-row">
                             <label class="b-form-vertical__label" for="msg2">Why do you want to attend AISYWC' 16?<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
