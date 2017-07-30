@@ -200,7 +200,7 @@ input.valid, textarea.valid{
                     if($('#contact_mem').val() == ''){error_element.removeClass("error").addClass("error_show"); error_free=false;}
                     else{error_element.removeClass("error_show").addClass("error");}
       
-                                        var element=$("input[name='yrs']");
+                    var element=$("input[name='yrs']");
                     var valid=element.hasClass("valid");
                     var error_element=$("span", element.parent()); 
                     if($('#contact_mem').val() == ''){error_element.removeClass("error").addClass("error_show"); error_free=false;}
@@ -209,19 +209,19 @@ input.valid, textarea.valid{
                     
 
 
-                         var element=$("textarea[name='message']");
+                    var element=$("textarea[name='message1essage']");
                     var valid=element.hasClass("valid");
                     var error_element=$("span", element.parent()); 
                     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
                     else{error_element.removeClass("error_show").addClass("error");}
 
-                                         var element=$("textarea[name='message1']");
+                    var element=$("textarea[name='message1']");
                     var valid=element.hasClass("valid");
                     var error_element=$("span", element.parent()); 
                     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
                     else{error_element.removeClass("error_show").addClass("error");}   
 
-                                        var element=$("textarea[name='message2']");
+                    var element=$("textarea[name='message2']");
                     var valid=element.hasClass("valid");
                     var error_element=$("span", element.parent()); 
                     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
@@ -473,21 +473,21 @@ else{error_element.removeClass("error_show").addClass("error");}
         <h1 class="vc_column-inner wpb_wrapper jx-evont-plan-section plan-column" style="font-family: Raleway, Arial, Helvetica, sans-serif;"><b>Registration Steps</b></h1><br>
         <section class="vc_row wpb_row vc_row-fluid no jx-evont-padding no-top-padding"><div class="container"><div class="row"><div class="col-sm-1"></div><div class="wpb_column vc_column_container vc_col-sm-5"><div class="vc_column-inner "><div class="wpb_wrapper"><!--plan section start here-->
         <div class="jx-evont-plan-section">               
-        <div class="plan-column">
+        <div class="plan-column" style="padding-top: 15px;padding-bottom: 1px;">
           <h4>Phase 1</h4>
           <hr style="background-color: orange;">
           <ul><li>
-          <div style="text-align: justify;">All Students/Young Professionals can register for Phase 1 through online submission of required information. Scrutiny for Phase 2 would be done based upon the received information and preference would be given to IEEE members.<br><br></div></li></ul>
+          <div style="text-align: justify;"><br>All Students/Young Professionals can register for Phase 1 through online submission of required information. Scrutiny for Phase 2 would be done based upon the received information and preference would be given to IEEE members.<br><br></div></li></ul>
         </div>
       </div>
         <!--plan section end here--></div></div></div>
         <div class="wpb_column vc_column_container vc_col-sm-5"><div class="vc_column-inner "><div class="wpb_wrapper"><!--plan section start here-->
         <div class="jx-evont-plan-section">               
-        <div class="plan-column">
+        <div class="plan-column" style="padding-top: 15px;padding-bottom: 1px;">
           <h4>Phase 2</h4>
           <hr style="background-color: orange;">
           <ul><li>
-          <div style="text-align: justify;">Only selected candidates would be called for phase 2 of registration through emails. Candidate should make the payment for relevant registration fee to generate the event ticket. Registration would be confirmed after receiving the mail for event ticket generation. 
+          <div style="text-align: justify;"><br>Only selected candidates would be called for phase 2 of registration through emails. Candidate should make the payment for relevant registration fee to generate the event ticket. Registration would be confirmed after receiving the mail for event ticket generation. 
         </div></li></ul>
       </div>
         <!--plan section end here--></div></div></div><div class="col-sm-1"></div>
@@ -505,7 +505,7 @@ else{error_element.removeClass("error_show").addClass("error");}
         <div class="standard-column">
           <h3>Non-IEEE MEMBER STUDENTS</h3>
           <hr>
-          <div class="jx-evont-plan-price" style="padding-bottom: 69px;">3200 INR<span></span></div>
+          <div class="jx-evont-plan-price" style="padding-bottom: 69px;">3000 INR<span></span></div>
         </div>
       </div>
         <!--plan section end here--></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper"><!--plan section start here-->
@@ -513,7 +513,7 @@ else{error_element.removeClass("error_show").addClass("error");}
         <div class="plan-column">
           <h3>IEEE MEMBER STUDENTS</h3>
           <hr style="background-color: orange;"> <br>
-          <div class="jx-evont-plan-price" style="padding-bottom: 83px;">2800 INR<span></span></div>
+          <div class="jx-evont-plan-price" style="padding-bottom: 83px;">2500 INR<span></span></div>
         </div>
       </div>
         <!--plan section end here--></div></div></div></div></div></section>
@@ -568,6 +568,7 @@ else{error_element.removeClass("error_show").addClass("error");}
     <div class="container b-container-login-page">
         <div class="row">
             <div class="col-md-12">
+                <div class="b-form-row f-primary-l f-title-big c-secondary">Registration Form</div>
                 <div class="b-form-row"></div>
                 <hr class="b-hr" />
                 <form action="register.php" method="POST" id="contact" novalidate>
@@ -594,40 +595,41 @@ else{error_element.removeClass("error_show").addClass("error");}
                                 <span class="error">A valid email address is required</span>    
                             </div>
                         </div>
-                        <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="create_account_email">College Name<span class="star">*</span></label>
+                    <div class="b-form-row">
+                    <label class="b-form-vertical__label" for="create_accournt_phone">Gender<span class="star">*</span></label>
+                    <div class="b-form-row b-form-inline" >                                      
+                    <label for="re" class="b-form-vertical__label">
+                    <input type="radio" value="male"  name="gender" checked>
+                    <span></span>Male
+                    </label >
+                    <label for="r3" class="b-form-vertical__label">
+                    <input type="radio" value="female" name="gender" >
+                    <span></span>Female
+                    </label>    
+                    </div></div>
+
+                    <div class="b-form-row">
+                            <label class="b-form-vertical__label" for="create_account_name">College Name<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <input type="text" id="contact_email" name="college" class="form-control" required />
-                                <span class="error">A valid college name is required.</span>    
+                                <input type="text" id="cllg_name" name="cllgname" class="form-control" required="required" data-required="true"/>
+                                <span class="error">This field is required</span>
                             </div>
                         </div>
                         <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="create_account_email">College City<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="create_account_name">College City<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <input type="text" id="contact_email" name="college" class="form-control" required />
-                                <span class="error">A valid college city is required.</span>    
+                                <input type="text" id="cllg_city" name="cllgcity" class="form-control" required="required" data-required="true"/>
+                                <span class="error">This field is required</span>
                             </div>
                         </div>
                         <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="create_account_email">Organisation<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="create_account_name">Organisation<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <input type="text" id="contact_email" name="college" class="form-control" required />
-                                <span class="error">A valid Organisation is required.</span>    
+                                <input type="text" id="cllg_org" name="cllgorg" class="form-control" required="required" data-required="true"/>
+                                <span class="error">This field is required</span>
                             </div>
                         </div>
-<div class="b-form-row">
-<label class="b-form-vertical__label" for="create_accournt_phone">Gender<span class="star">*</span></label>
-<div class="b-form-row b-form-inline" >                                      
-<label for="re" class="b-form-vertical__label">
-<input type="radio" value="male"  name="gender" checked>
-<span></span>Male
-</label >
-<label for="r3" class="b-form-vertical__label">
-<input type="radio" value="female" name="gender" >
-<span></span>Female
-</label>    
-</div></div>
-<div class="b-form-row">
+                    <div class="b-form-row">
                             <label class="b-form-vertical__label" for="create_account_phonqwe">IEEE Membership Number<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
                                 <input type="text" id="contact_mem" name="mem" class="form-control" />
@@ -635,7 +637,7 @@ else{error_element.removeClass("error_show").addClass("error");}
                             </div>
                         </div> 
 <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="create_account_phosne">IEEE Member since how many years?<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="create_account_phosne">IEEE Member since how many years?</label>
                             <div class="b-form-vertical__input">
                                 <input type="number" name="yrs" class="form-control" value="0" min="0" required />
                 <span class="error">This is a required field</span>                     
@@ -661,7 +663,7 @@ else{error_element.removeClass("error_show").addClass("error");}
 
                               <input type="radio" value="yp" name="category" id="yp" required="required" data-required="true" >
 
-                              <span></span>Young Professional&nbsp;
+                              <span></span>Young Professionals&nbsp;
                           </label>
                            <label for="r1" class="b-form-vertical__label">
 
@@ -674,16 +676,32 @@ Please select one of the above</span>
          
          
                         </div> </div>
-        
+        <div class="b-form-row">
+                            <label class="b-form-vertical__label" for="state"></label>
+                            <div class="b-form-vertical__input">
+         <select id="describe" required="required" data-required="true" name="describe" class="form-control" onchange="return onchangeajax(this.value);" required><span class="star">*</span>
+  
+    <option value=""   >Select Membership Type Above</option>
+  </select>
+ <span class="error">This field is required</span>
+ </div>
+                        </div> 
+                         <div class="b-form-row">
+                            <label class="b-form-vertical__label" for="cllg"></label>
+                            <div class="b-form-vertical__input">
+<div id="statediv">
+</div>
+</div></div>
 
 <div class="b-form-row">
 <label class="b-form-vertical__label" for="create_account_phone33">Have you previously attended any AIS(YW)C?<span class="star">*</span></label>
+                                    
 <div class="b-form-vertical__input">
-                                <input type="number" name="yrs" class="form-control" value="0" min="0" required />
-                <span class="error">This is a required field</span>                     
-                            </div> 
+                                <input type="text" id="prev" name="attend" class="form-control"/>
+                                        
+                            </div></div>
 <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="msg2">Why do you want to attend AISYWC' 17?<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="msg2">Why do you want to attend AISYWC' 16?<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
                                 <textarea rows="5" id="contact_message" name="message" class="form-control" required/>
                                 </textarea>
@@ -699,24 +717,19 @@ Please select one of the above</span>
                             </div>
                         </div>
 <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="msg">Your expectations from AISYWC' 17?<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="msg">Your expectations from AISYWC' 16?<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
                                 <textarea rows="5" id="contact_message2" name="message2" class="form-control" required/>
                                 </textarea>
         <span class="error">This field is required</span>
                             </div>
                         </div>
-
-
- 
-                        
-                       
                         <div class="b-form-row">
                             <div class="b-form-vertical__label"></div>
                             <div class="b-form-vertical__input">
                             <div id="contact_submit">               
-                <button type="submit" name="submit" class="btn-box" style="background-color: orange;">Submit</button>
-            </div><br>
+                <button type="submit" name="submit" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100 button-gray-light" >Register</button> 
+            </div>
                            
                             </div>
                         </div>
