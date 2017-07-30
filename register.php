@@ -6,13 +6,13 @@ ini_set('display_errors', '1');
 <?php 
 if(isset($_POST['submit']))
 {
-include "storescripts/connect_to_mysql.php"; 
+include "connect_to_mysql.php"; 
 $name=$_POST["name"];
 $email = $_POST["email"];
 $sql = mysql_query("SELECT id FROM registrants WHERE email='$email' LIMIT 1");
-	$productMatch = mysql_num_rows($sql); // count the output amount
+  $productMatch = mysql_num_rows($sql); // count the output amount
     if ($productMatch > 0) {
-		echo '<div class="b-shortcode-example">
+    echo '<div class="b-shortcode-example">
             <div class="b-alert-warning f-alert-warning">
               <div class="b-right">
                 
@@ -23,38 +23,34 @@ $sql = mysql_query("SELECT id FROM registrants WHERE email='$email' LIMIT 1");
             </div>
           </div>
 ';
-		
-	}
-	else
-	{
+    
+  }
+  else
+  {
 $phn = mysql_real_escape_string($_POST["phone"]);
 $category = mysql_real_escape_string($_POST["category"]);
-$state = mysql_real_escape_string($_POST["describe"]);
-$college = mysql_real_escape_string($_POST['state']);
-$otherstate = mysql_real_escape_string($_POST["state13"]);
-$othercllg= mysql_real_escape_string($_POST["state14"]);
+$cllgname = mysql_real_escape_string($_POST["cllgname"]);
+$cllgcity = mysql_real_escape_string($_POST["cllgcity"]);
+$cllgorg = mysql_real_escape_string($_POST["cllgorg"]);
 $message = mysql_real_escape_string($_POST["message"]);
 $message1 = mysql_real_escape_string($_POST["message1"]);
 $message2 = mysql_real_escape_string($_POST["message2"]);
-$message3 = mysql_real_escape_string($_POST["message3"]);
-$state1= mysql_real_escape_string($_POST["state1"]);
 $gender = mysql_real_escape_string($_POST["gender"]);
-$org = mysql_real_escape_string($_POST["org"]);
 $mem = mysql_real_escape_string($_POST["mem"]);
 $yrs = mysql_real_escape_string($_POST["yrs"]);
 $attend = mysql_real_escape_string($_POST["attend"]);
 if($state=="")
 {
-	$state = $otherstate;
+  $state = $otherstate;
 }
 
 if($college=="" && $state1=="")
 {
-	$college = $othercllg;
+  $college = $othercllg;
 }
 else if($state1!="")
-	$college = $state1;
-$sql = "INSERT INTO `registrants`(`name`, `email`, `phone`, `category`, `section`, `college`, `ques1`, `ques2`, `ques3`, `ques4`, `gender`, `membership`, `org`, `yrs`, `attend`) VALUES ('$name', '$email', '$phn', '$category','$state', '$college', '$message', '$message1', '$message2', '$message3', '$gender', '$mem', '$org', '$yrs', '$attend')";
+  $college = $state1;
+$sql = "INSERT INTO `registrants`(`name`, `email`, `phone`, `category`, `cllgname`, `cllgcity`, `cllgorg`, `ques1`, `ques2`, `ques3`, `gender`, `membership`, `yrs`, `attend`) VALUES ('$name', '$email', '$phn', '$category','$cllgname', '$cllgcity', `cllgorg` , '$message', '$message1', '$message2', '$gender', '$mem', '$yrs', '$attend')";
 
 
  $result = mysql_query($sql) or die(mysql_error());
@@ -100,15 +96,15 @@ $xyz="'.$name.'
 '.$phn.' 
 '.$ida.'
  '.$category.' 
-'.$state.' 
-'.$college.' 
+'.$cllgname.' 
+'.$cllgcity.' 
+'.$cllgorg.' 
 '.$message.'
  '.$message1.' 
 '.$message2.' 
 '.$message3.'
  '.$gender.'
  '.$mem.' 
-'.$org.' 
 '.$yrs.' 
 '.$attend.";
 $email_to = "info@aisywc.in";
@@ -131,6 +127,6 @@ $headers .= 'bcc: sunakshi22@gmail.com' . "\r\n";
               </div>
             </div>
 ';
-	}
+  }
 }
 ?>
