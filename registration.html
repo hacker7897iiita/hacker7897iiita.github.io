@@ -121,7 +121,6 @@ input.valid, textarea.valid{
         $(document).ready(function() {
                 $('#contact_name').on('input', function() {
                     var input=$(this);
-                    
                     var re = /^\s*([a-zA-Z,\s]{3,26})+\s*$/;
                     var is_name=re.test(input.val());
                     if(is_name){input.removeClass("invalid").addClass("valid");}
@@ -152,14 +151,21 @@ input.valid, textarea.valid{
                     if(message){input.removeClass("invalid").addClass("valid");}
                     else{input.removeClass("valid").addClass("invalid");}   
                 });
-                $('#cllg_org').keyup(function(event) {
+                $('#cllg_city').keyup(function(event) {
                     var input=$(this);
                     var message=$(this).val();
                     console.log(message);
                     if(message){input.removeClass("invalid").addClass("valid");}
                     else{input.removeClass("valid").addClass("invalid");}   
                 });
-                $('#cllg_city').keyup(function(event) {
+                $('#contact_mem').keyup(function(event) {
+                    var input=$(this);
+                    var message=$(this).val();
+                    console.log(message);
+                    if(message){input.removeClass("invalid").addClass("valid");}
+                    else{input.removeClass("valid").addClass("invalid");}   
+                });
+                $('#mem_yrs').keyup(function(event) {
                     var input=$(this);
                     var message=$(this).val();
                     console.log(message);
@@ -222,18 +228,6 @@ input.valid, textarea.valid{
                     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
                     else{error_element.removeClass("error_show").addClass("error");}
                     
-                    var element=$("input[name='mem']");
-                    var valid=element.hasClass("valid");
-                    var error_element=$("span", element.parent()); 
-                    if($('#contact_mem').val() == ''){error_element.removeClass("error").addClass("error_show"); error_free=false;}
-                    else{error_element.removeClass("error_show").addClass("error");}
-      
-                    var element=$("input[name='yrs']");
-                    var valid=element.hasClass("valid");
-                    var error_element=$("span", element.parent()); 
-                    if($('#contact_mem').val() == ''){error_element.removeClass("error").addClass("error_show"); error_free=false;}
-                    else{error_element.removeClass("error_show").addClass("error");}
-
                     var element=$("input[name='cllgname']");
                     var valid=element.hasClass("valid");
                     var error_element=$("span", element.parent());
@@ -246,10 +240,16 @@ input.valid, textarea.valid{
                     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
                     else{error_element.removeClass("error_show").addClass("error");}
 
-                     var element=$("input[name='cllgorg']");
+                    var element=$("input[name='mem']");
                     var valid=element.hasClass("valid");
-                    var error_element=$("span", element.parent());
-                    if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+                    var error_element=$("span", element.parent()); 
+                    if($('#contact_mem').val() == ''){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+                    else{error_element.removeClass("error_show").addClass("error");}
+      
+                    var element=$("input[name='yrs']");
+                    var valid=element.hasClass("valid");
+                    var error_element=$("span", element.parent()); 
+                    if($('#contact_mem').val() == ''){error_element.removeClass("error").addClass("error_show"); error_free=false;}
                     else{error_element.removeClass("error_show").addClass("error");}
 
                     var element=$("input[name='attend']");
@@ -276,7 +276,7 @@ input.valid, textarea.valid{
                     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
                     else{error_element.removeClass("error_show").addClass("error");}   
                                           
-                                          var element=$("input[name='category']");
+                                       /*   var element=$("input[name='category']");
                                           var valid=element.hasClass("valid");
                       var error_element=$("span", element.parent());
                                           if (!$("input[name='category']:checked").val()) {
@@ -290,7 +290,7 @@ input.valid, textarea.valid{
                                          var error_element=$("span", element.parent());
                                          if ($('#describe').val() == "") 
                                          {error_element.removeClass("error").addClass("error_show"); error_free=false;}
-else{error_element.removeClass("error_show").addClass("error");}  
+else{error_element.removeClass("error_show").addClass("error");}  */
  
                 
                 if (!error_free){   
@@ -545,13 +545,13 @@ else{error_element.removeClass("error_show").addClass("error");}
       </div>
         <!--plan section end here--></div></div></div><div class="col-sm-1"></div>
         </div></div></section><br><br>
-        <h4 style="padding-left : 480px;"><b>Registration will be open soon</b></h4><br><br>
+        <h2 class="vc_column-inner wpb_wrapper jx-evont-plan-section plan-column" style="font-family: Raleway, Arial, Helvetica, sans-serif;"><b>Registration will be open soon</b></h2><br><br>
       <section class="vc_row wpb_row vc_row-fluid no jx-evont-padding no-top-padding"><div class="container"><div class="row"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper"><!--plan section start here-->
         <div class="jx-evont-plan-section">               
         <div class="plan-column">
-          <h3>YOUNG PROFESSIONALS</h3>
+          <h3>YOUNG PROFESSIONALS*</h3>
           <hr style="background-color: orange;">
-          <div class="jx-evont-plan-price">3500 INR 5500* INR<span></span></div>
+          <div class="jx-evont-plan-price" style="min-padding-bottom: 13px;"><span></span></div>
         </div>
       </div>
         <!--plan section end here--></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper"><!--plan section start here-->
@@ -559,7 +559,7 @@ else{error_element.removeClass("error_show").addClass("error");}
         <div class="standard-column">
           <h3>Non-IEEE MEMBER STUDENTS</h3>
           <hr>
-          <div class="jx-evont-plan-price" style="padding-bottom: 69px;">3000 INR<span></span></div>
+          <div class="jx-evont-plan-price" style="min-padding-bottom: 13px;padding-bottom: 0px;"><span></span></div>
         </div>
       </div>
         <!--plan section end here--></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper"><!--plan section start here-->
@@ -567,7 +567,7 @@ else{error_element.removeClass("error_show").addClass("error");}
         <div class="plan-column">
           <h3>IEEE MEMBER STUDENTS</h3>
           <hr style="background-color: orange;"> <br>
-          <div class="jx-evont-plan-price" style="padding-bottom: 83px;">2500 INR<span></span></div>
+          <div class="jx-evont-plan-price" style="min-padding-bottom: 13px;padding-bottom: 13px;"><span></span></div>
         </div>
       </div>
         <!--plan section end here--></div></div></div></div></div></section> 
@@ -630,7 +630,7 @@ else{error_element.removeClass("error_show").addClass("error");}
                     <div class="b-form-row">
                             <label class="b-form-vertical__label" for="create_account_name">Name<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <input type="text" id="contact_name" name="name" class="form-control" required="required" data-required="true"/>
+                                <input type="text" id="contact_name" name="name" class="form-control" required="required" data-required="true" maxlength="100"/>
                                 <span class="error">This field is required</span>
                             </div>
                         </div>
@@ -662,30 +662,30 @@ else{error_element.removeClass("error_show").addClass("error");}
                     </div></div>
 
                     <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="create_account_name">College Name / Organisation<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="create_account_name">College / Organisation Name<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <input type="text" id="cllg_name" name="cllgname" class="form-control" required="required" data-required="true"/>
+                                <input type="text" id="cllg_name" name="cllgname" class="form-control" required="required" data-required="true" maxlength="200" />
                                 <span class="error">This field is required</span>
                             </div>
                         </div>
                         <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="create_account_name">College City<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="create_account_name">City<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <input type="text" id="cllg_city" name="cllgcity" class="form-control" required="required" data-required="true"/>
+                                <input type="text" id="cllg_city" name="cllgcity" class="form-control" required="required" data-required="true" maxlength="100" />
                                 <span class="error">This field is required</span>
                             </div>
                         </div>
                     <div class="b-form-row">
                             <label class="b-form-vertical__label" for="create_account_phonqwe">IEEE Membership Number<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <input type="text" id="contact_mem" name="mem" class="form-control" />
+                                <input type="text" id="contact_mem" name="mem" class="form-control" length="8"/>
                 <span class="error">This is a required field</span>             
                             </div>
                         </div> 
 <div class="b-form-row">
                             <label class="b-form-vertical__label" for="create_account_phosne">IEEE Member since how many years?<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <input type="number" name="yrs" class="form-control" value="0" min="0" required />
+                                <input type="number" name="yrs" id="mem_yrs" class="form-control" value="0" min="0" required  maxlength="100" />
                 <span class="error">This is a required field</span>                     
                             </div>
                         </div> 
@@ -701,7 +701,7 @@ else{error_element.removeClass("error_show").addClass("error");}
                      
 <label for="r1" class="b-form-vertical__label">
 
-                              <input type="radio" value="ieee"  name="category"  id="ieee" required="required" data-required="true">
+                              <input type="radio" value="ieee"  name="category"  id="ieee" required="required" data-required="true" checked>
   
                              <span></span>Student&nbsp;
                           </label>
@@ -717,8 +717,8 @@ else{error_element.removeClass("error_show").addClass("error");}
                             
                              <span></span>Women in Engineering Member&nbsp;
                     </label><br>
-        <input type="radio" name="category" style="display:none;"><span class="error">
-Please select one of the above</span>
+    <!--    <input type="radio" name="category" style="display:none;"><span class="error">
+Please select one of the above</span>-->
          
          
                         </div> </div>
@@ -732,24 +732,24 @@ Please select one of the above</span>
  <span class="error">This field is required</span>
  </div>
                         </div> -->
-                         <div class="b-form-row">
+                    <!--     <div class="b-form-row">
                             <label class="b-form-vertical__label" for="cllg"></label>
                             <div class="b-form-vertical__input">
 <div id="statediv">
 </div>
-</div></div>
+</div></div>-->
 <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="msg2">Have you previously attended any AIS(YW)C?<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="msg3">Have you previously attended any AIS(YW)C?<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <input type="text" id="attender" name="attend" class="form-control" required/>
+                                <input type="text" id="attender" name="attend" class="form-control" required maxlength="500" />
                                 <span class="error">This field is required</span>
                             </div>
                         </div>
 
 <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="msg2">Why do you want to attend AISYWC' 16?<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="msg2">Why do you want to attend AISYWC' 17?<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <textarea rows="5" id="contact_message" name="message" class="form-control" required/>
+                                <textarea rows="5" id="contact_message" name="message" class="form-control" required maxlength="500" />
                                 </textarea>
         <span class="error">This field is required</span>
                             </div>
@@ -757,15 +757,15 @@ Please select one of the above</span>
 <div class="b-form-row">
                             <label class="b-form-vertical__label" for="message1">Your current and past volunteer roles in IEEE?<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <textarea rows="5" id="contact_message1" name="message1" class="form-control" required/>
+                                <textarea rows="5" id="contact_message1" name="message1" class="form-control" required  maxlength="500"/>
                                 </textarea>
         <span class="error">This field is required</span>
                             </div>
                         </div>
 <div class="b-form-row">
-                            <label class="b-form-vertical__label" for="msg">Your expectations from AISYWC' 16?<span class="star">*</span></label>
+                            <label class="b-form-vertical__label" for="msg">Your expectations from AISYWC' 17?<span class="star">*</span></label>
                             <div class="b-form-vertical__input">
-                                <textarea rows="5" id="contact_message2" name="message2" class="form-control" required/>
+                                <textarea rows="5" id="contact_message2" name="message2" class="form-control" required maxlength="500" />
                                 </textarea>
         <span class="error">This field is required</span>
                             </div>
@@ -1037,7 +1037,7 @@ var listA = [{name:'Select Section', value:''},
             <!- -support us start- ->
             <div class="jx-evont-partner supportus_area jx-dark row-four-logo">
             <h3>- Platinum Sponsors -</h3>
-            <ul><li class="item"><a href="sponsors.html#22" target="_blank"><img src="wp-content/uploads/2016/07/logo-1.jpg" alt="Partner 22"> </a></li><li class="item"><a href="sponsors.html#25" target="_blank"><img src="wp-content/uploads/2016/07/logo-4.jpg" alt="Partner 25"> </a></li><li class="item"><a href="sponsors.html#24" target="_blank"><img src="wp-content/uploads/2016/07/logo-2.jpg" alt="Partner 24"> </a></li><li class="item"><a href="sponsors.html# 23" target="_blank"><img src="wp-content/uploads/2016/07/logo-.jpg" alt="Partner 23"> </a></li></ul></div> <!- -support us end- ->
+            <ul><li class="item"><a href="sponsors.html#22" target="_blank"><img src="wp-content/uploads/2016/07/logo-1.jpg" alt="Partner 22"> </a></li><li class="item"><a href="sponsors.html#25" target="_blank"><img src="wp-content/uploads/2017/07/logo-4.jpg" alt="Partner 25"> </a></li><li class="item"><a href="sponsors.html#24" target="_blank"><img src="wp-content/uploads/2016/07/logo-2.jpg" alt="Partner 24"> </a></li><li class="item"><a href="sponsors.html# 23" target="_blank"><img src="wp-content/uploads/2016/07/logo-.jpg" alt="Partner 23"> </a></li></ul></div> <!- -support us end- ->
             <!- -support us start- ->
             <div class="jx-evont-partner supportus_area jx-dark row-four-logo">
             <h3>- Gold Sponsors -</h3>
