@@ -31,7 +31,6 @@ $phn = mysql_real_escape_string($_POST["phone"]);
 $category = mysql_real_escape_string($_POST["category"]);
 $cllgname = mysql_real_escape_string($_POST["cllgname"]);
 $cllgcity = mysql_real_escape_string($_POST["cllgcity"]);
-$cllgorg = mysql_real_escape_string($_POST["cllgorg"]);
 $message = mysql_real_escape_string($_POST["message"]);
 $message1 = mysql_real_escape_string($_POST["message1"]);
 $message2 = mysql_real_escape_string($_POST["message2"]);
@@ -50,7 +49,7 @@ if($college=="" && $state1=="")
 }
 else if($state1!="")
   $college = $state1;
-$sql = "INSERT INTO `registrants`(`name`, `email`, `phone`, `category`, `cllgname`, `cllgcity`, `cllgorg`, `ques1`, `ques2`, `ques3`, `gender`, `membership`, `yrs`, `attend`) VALUES ('$name', '$email', '$phn', '$category','$cllgname', '$cllgcity', `cllgorg` , '$message', '$message1', '$message2', '$gender', '$mem', '$yrs', '$attend')";
+$sql = "INSERT INTO `registrants`(`name`, `email`, `phone`, `category`, `cllgname`, `cllgcity`,  `ques1`, `ques2`, `ques3`, `gender`, `membership`, `yrs`, `attend`) VALUES ('$name', '$email', '$phn', '$category','$cllgname', '$cllgcity', '$message', '$message1', '$message2', '$gender', '$mem', '$yrs', '$attend')";
 
 
  $result = mysql_query($sql) or die(mysql_error());
