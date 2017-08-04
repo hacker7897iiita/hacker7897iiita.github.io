@@ -7552,7 +7552,7 @@ width: 100%;
   margin-bottom: 0 !important;
 }
 
-.null-instagram-feed li:nth-child(3n){
+.null-instagram-feed li:nth-child(1n){
   margin-right:0px !important;
 }
 
